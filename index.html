@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Rubik", sans-serif;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+      background-color: hsl(270, 20%, 96%);
+      width: 1440px;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .bg-image-left {
+      align-self: self-start;
+      position: absolute;
+      left: -10%;
+      width: 40%;
+      height: 88%;
+      background-image: linear-gradient(hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+      z-index: -1;
+      border-radius: 0 0 50% 50%;
+
+
+    }
+
+    .bg-image-right {
+      align-self: self-start;
+      position: absolute;
+      right: -240px;
+      bottom: 0;
+      width: 40%;
+      height: 88%;
+      background-image: linear-gradient(hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+      z-index: -1;
+      border-radius: 50% 0 0 0;
+      opacity: 0.05;
+
+
+    }
+
+    .anabox {
+      z-index: 1;
+      display: flex;
+
+
+      width: 80%;
+      height: auto;
+
+    }
+
+    .a {
+
+      width: 50%;
+      padding: 10px;
+      padding-left: 140px;
+      height: auto;
+
+    }
+
+    .tel-box {
+      margin: auto;
+      width: 350px;
+      height: 100%;
+      padding: 15px;
+      background-color: white;
+      border-radius: 40px;
+      overflow: hidden;
+      position: relative;
+      scale: 0.8;
+
+    }
+
+    .tel {
+      border-radius: 30px;
+      background-color: hsl(270, 20%, 96%);
+      height: 100%;
+      overflow: hidden;
+      font-size: 13px;
+    }
+
+
+
+    .tel-bos {
+      width: 160px;
+      height: 38px;
+      background-color: white;
+      margin: 0 auto;
+      border-radius: 15px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+    .tel-samuel {
+      display: flex;
+
+      align-items: center;
+      padding: 20px 15px 0;
+      border-radius: 10px;
+      width: 100%;
+      height: 90px;
+      background-image: linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+
+
+
+    }
+
+    .ok-icon {
+      color: white;
+      margin-right: 5px;
+
+    }
+
+    .img-samuel {
+      width: 40px;
+      border-radius: 50%;
+      border: 2px solid white;
+
+    }
+
+    .isim {
+      display: flex;
+      flex-direction: column;
+
+      justify-content: space-between;
+      color: white;
+      margin-left: 7px;
+      margin-bottom: 5px;
+    }
+
+    .p1 {
+      font-size: 15px;
+      font-weight: 700;
+
+
+
+    }
+
+    .p2 {
+      font-size: 12px;
+      margin-top: 3px;
+      color: rgba(245, 245, 245, 0.583);
+
+    }
+
+    .ucnokta-icon {
+      margin-left: auto;
+      color: white;
+    }
+
+    .orta-kisim {
+      padding: 15px;
+    }
+
+    .konusmatip-1 {
+      font-size: 11px;
+      background-color: #EEE5F6;
+      color: #9446cb;
+      margin-bottom: 10px;
+      padding: 10px;
+      width: 60%;
+      border-radius: 10px 10px 10px 4px;
+    }
+
+    .kopekler {
+      display: flex;
+      justify-content: end;
+
+    }
+
+    .kopekler div {
+      margin-left: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+    }
+
+    .kopekler img {
+      width: 60px;
+      height: auto;
+      border-radius: 20px;
+
+    }
+
+    .konusmatip-2 {
+      font-size: 11px;
+      margin-left: auto;
+      background-color: white;
+      color: black;
+      margin-bottom: 10px;
+      padding: 10px;
+      width: 63%;
+      border-radius: 10px 10px 4px 10px;
+    }
+
+    .konusmatip-2-a {
+      font-size: 11px;
+      margin-left: auto;
+      background-color: white;
+      color: black;
+      margin-bottom: 20px;
+
+      padding: 10px;
+      width: 40%;
+      border-radius: 10px 10px 4px 10px;
+    }
+
+
+
+
+    .renkli-konusma {
+
+      display: flex;
+      align-items: center;
+      background-image: linear-gradient(to right, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+
+      width: 80%;
+      padding: 12px 10px;
+      border-radius: 15px 15px 15px 5px;
+      margin-bottom: 10px;
+    }
+
+    .yuvarlak {
+      width: 20px;
+      height: 20px;
+
+      border: 2px solid rgba(255, 255, 255, 0.332);
+      border-radius: 250%;
+    }
+
+    .yazi {
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      padding-left: 10px;
+
+    }
+
+    .dakika {
+      color: rgba(245, 245, 245, 0.583);
+    }
+
+    .dolar {
+      font-size: 18px;
+      font-weight: 700;
+      margin-left: auto;
+      color: white;
+    }
+
+    .arama-cubuk {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 50px;
+      background-color: white;
+      padding: 10px;
+      padding-left: 25px;
+      margin-top: 25px;
+
+    }
+
+    .arama-cubuk p {
+      color: rgba(128, 128, 128, 0.395);
+    }
+
+    .div-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #240739;
+      color: white;
+
+    }
+
+
+
+    .simplebooking {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+
+      line-height: 30px;
+      padding-right: 11%;
+    }
+
+    .simplebooking h1 {
+      margin-bottom: 40px;
+      font-size: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="bg-image-left"></div>
+    <div class="bg-image-right"></div>
+    <div class="anabox">
+      <div class="a">
+        <div class="tel-box">
+          <div class="tel">
+            <div class="tel-bos"></div>
+            <div class="tel-samuel">
+              <i class="fa-solid fa-angle-left ok-icon"></i>
+              <div><img class="img-samuel" src="images/avatar.jpg" alt=""></div>
+              <div class="isim">
+                <p class="p1">Samuel Green</p>
+                <p class="p2">Available to Walk</p>
+              </div>
+              <i class="ucnokta-icon fa-solid fa-ellipsis-vertical"></i>
+            </div>
+
+            <div class="orta-kisim">
+              <div class="konusmatip-1">That sounds great. I’d be happy with that.</div>
+              <div class="konusmatip-1">Could you send over some pictures of your dog, please?</div>
+              <div class="kopekler">
+                <div><img src="images/dog-image-1.jpg" alt=""></div>
+                <div><img src="images/dog-image-2.jpg" alt="">
+                </div>
+                <div><img src="images/dog-image-3.jpg" alt="">
+                </div>
+              </div>
+              <div class="konusmatip-2">Here are a few pictures. She’s a happy girl!</div>
+              <div class="konusmatip-2-a">Can you make it?</div>
+              <div class="konusmatip-1">She looks so happy! The time we discussed works. How long shall I take her out
+                for?</div>
+              <div class="renkli-konusma">
+
+                <div class="yuvarlak"></div>
+                <div class="yazi">
+                  <p class="dakika">30 minute walk</p>
+                  <p class="dolar">$29</p>
+                </div>
+              </div>
+
+              <div class="renkli-konusma">
+                <div class="yuvarlak"></div>
+                <div class="yazi">
+                  <p class="dakika">1 hour walk</p>
+                  <p class="dolar">$49</p>
+                </div>
+              </div>
+
+              <div class="arama-cubuk">
+                <p>Type a message…</p>
+                <div class="div-icon">
+                  <i class="icon fa-solid fa-angle-right"></i>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="simplebooking">
+        <h1>Simple booking</h1>
+        <p>Stay in touch with our dog walkers through the chat interface. This makes it easy to
+          discuss arrangements and make bookings. Once the walk has been completed you can rate
+          your walker and book again all through the chat.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>
